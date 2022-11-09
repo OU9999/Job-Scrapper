@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-def extract_jobs(term):
+def extract_remote_jobs(term):
   url = f"https://remoteok.com/remote-{term}-jobs"
   request = requests.get(url, headers={"User-Agent": "Kimchi"})
   if request.status_code == 200:
@@ -36,7 +36,3 @@ def extract_jobs(term):
         
   else:
     print("Can't get jobs.")
-
-react = extract_jobs("react")
-print(react)
-

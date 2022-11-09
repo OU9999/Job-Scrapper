@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap");
+@import "reset.css";
+@import "variables.css";
+
+body {
+  background-color: wheat;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  font-size: 80px;
+}
+
+header h4 {
+  font-size: 50px;
+}
