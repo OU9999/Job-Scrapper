@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap");
+@import "reset.css";
+
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body {
+  background-color: black;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.home-main {
+  animation: fadeIn 1s ease-in-out;
+}
+.box {
+  position: relative;
+  margin: 10% auto 0;
+  width: 50%;
+  height: 500px;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #e6fb04,
+    #ff6600,
+    #00ff66,
+    #00ffff,
+    #ff00ff,
+    #ff0099,
+    #6e0dd0,
+    #ff3300,
+    #099fff
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: glow 20s linear infinite;
+}
+
+.glow::after {
+  filter: blur(40px);
+}
+
+.home-header {
+  text-align: center;
+  color: white;
+}
+
+.home-header h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.home-header h4 {
+  font-size: 50px;
+}
+
+.home-form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-form input {
+  background-color: black;
+  font-size: 30px;
+  width: 500px;
+  border: 1px solid white;
+  color: white;
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+.home-form button {
+  border: 1px solid white;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-form button:hover {
+  background-color: white;
+  color: black;
+}
+
+.header-box {
+  position: absolute;
+  top: 0;
+  margin-top: 25px;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  /*여기다 이자식아*/
+  /* display: none; */
+}
+
+.search-header h1 {
+  font-size: 50px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.search-header a {
+  font-size: 25px;
+  color: white;
+}
+
+.search-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 250px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-top: 250px; */
+}
+
+.rwd-table {
+  margin: 25px;
+}
+
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+.rwd-table tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+.rwd-table td {
+  display: block;
+}
+
+.rwd-table td:first-child {
+  margin-top: 0.5em;
+}
+
+.rwd-table td:last-child {
+  margin-bottom: 0.5em;
+}
+
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+  text-align: left;
+}
+
+.rwd-table {
+  color: #333;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+
+.rwd-table tr {
+  border-color: #bfbfbf;
+}
+
+.rwd-table th,
+.rwd-table td {
+  padding: 0.5em 1em;
+}
